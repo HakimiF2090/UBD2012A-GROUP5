@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBD2012 A Group 5 - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* =========================
+   HOME PAGE HERO
+========================= */
+
+body.home-page {
+  background: #111;
+  color: white;
+}
+
+.home-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.home-topbar-inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.home-logo {
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.home-menu {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.home-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.home-menu a:hover,
+.home-menu a.active {
+  color: #fff9c4;
+}
+
+.hero-home {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("Image/home-bg.jpg") center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(124, 58, 237, 0.18) 100%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.hero-box {
+  max-width: 620px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  padding: 34px 30px;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.28),
+    inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #fff7ed;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 52px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #f8fafc;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.hero-btn-primary {
+  background: white;
+  color: #111827;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(255,255,255,0.22);
+}
+
+.hero-btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.hero-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.2);
+}
+
+.home-info-section {
+  background: linear-gradient(135deg, #2f2f35, #3b3b44);
+  padding: 70px 0;
+}
+
+.home-info-inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.home-info-title {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.home-info-text {
+  max-width: 720px;
+  color: #e5e7eb;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 34px;
+}
+
+.home-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.home-image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 360px;
+  background: #111;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.home-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.72);
+  transition: transform 0.5s ease;
+}
+
+.home-image-card:hover img {
+  transform: scale(1.06);
+}
+
+.home-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.18),
+    transparent
+  );
+}
+
+.home-image-overlay h4 {
+  color: white;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home-banner-section {
+  padding: 70px 0 90px;
+  background: linear-gradient(135deg, #111827, #1f2937, #312e81);
+}
+
+.home-banner-card {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+}
+
+.home-banner-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55);
+}
+
+.home-banner-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.home-banner-text {
+  max-width: 650px;
+}
+
+.home-banner-text h3 {
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.home-banner-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f3f4f6;
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .home-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-topbar-inner {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .home-logo {
+    font-size: 24px;
+    letter-spacing: 5px;
+  }
+
+  .hero-home {
+    min-height: 88vh;
+  }
+
+  .hero-box {
+    padding: 24px 20px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .home-info-title {
+    font-size: 28px;
+  }
+
+  .home-banner-text h3 {
+    font-size: 28px;
+  }
+
+  .home-banner-text p {
+    font-size: 16px;
+  }
+
+  .home-banner-card img {
+    height: 460px;
+  }
+}
+  </style>
+</head>
+<body class="home-page">
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-blur loader-blur-1"></div>
+    <div class="loader-blur loader-blur-2"></div>
+
+    <div class="loader-card">
+      <div class="loader-badge">UBD2012 A • GROUP 5</div>
+
+      <div class="loader-visual">
+        <div class="loader-ring loader-ring-1"></div>
+        <div class="loader-ring loader-ring-2"></div>
+        <div class="loader-core">5</div>
+      </div>
+
+      <h2 class="loader-title">Sedang Memuatkan Laman</h2>
+      <p class="loader-subtitle">
+        Selamat datang ke laman UBD2012 Kemahiran Bakat Digital.
+      </p>
+
+      <div class="loader-progress">
+        <span class="loader-progress-bar"></span>
+      </div>
+
+      <div class="loader-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <p class="loader-note">Sila tunggu sebentar...</p>
+    </div>
+  </div>
+
+  <!-- TOP NAV -->
+  <header class="home-topbar">
+    <div class="home-topbar-inner">
+      <div class="home-logo">GROUP 5</div>
+
+      <nav class="home-menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="introduction.html">Introduction</a>
+        <a href="activity.html">Weekly Activity</a>
+        <a href="assignment.html">Assignment</a>
+        <a href="credit.html">Credit</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-home">
+    <div class="hero-inner">
+      <div class="hero-box">
+        <div class="hero-kicker">UBD2012 A • Kemahiran Bakat Digital</div>
+
+        <h1 class="hero-title">UBD2012 Kemahiran Bakat Digital</h1>
+
+        <p class="hero-subtitle">
+          Platform ini memaparkan identiti kursus, aktiviti mingguan, tugasan kumpulan,
+          dan hasil kerja digital yang dibangunkan oleh Group 5 sepanjang semester.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="introduction.html" class="hero-btn hero-btn-primary">Get Started</a>
+          <a href="activity.html" class="hero-btn hero-btn-secondary">Weekly Activity</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION BAWAH -->
+  <section class="home-info-section">
+    <div class="home-info-inner">
+      <h2 class="home-info-title">Kemahiran yang Dibangunkan</h2>
+      <p class="home-info-text">
+        Subject ini menekankan pembangunan kreativiti, penggunaan teknologi,
+        kerjasama berkumpulan, dan penghasilan bahan digital yang lebih teratur,
+        menarik, dan profesional.
+      </p>
+
+      <div class="home-image-grid">
+        <div class="home-image-card">
+          <img src="Image/HomePage/kreatif.png" alt="Kreativiti Digital">
+          <div class="home-image-overlay">
+            <h4>Kreativiti Digital</h4>
+          </div>
+        </div>
+
+        <div class="home-image-card">
+          <img src="Image/HomePage/teknologi.png" alt="Teknologi">
+          <div class="home-image-overlay">
+            <h4>Teknologi</h4>
+          </div>
+        </div>
+
+        <div class="home-image-card">
+          <img src="Image/HomePage/kerjasama.png" alt="Kerjasama Kumpulan">
+          <div class="home-image-overlay">
+            <h4>Kerjasama</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER AKHIR -->
+  <section class="home-banner-section">
+    <div class="home-banner-card">
+      <img src="Image/HomePage/GerbangUpsi.jpg" alt="UBD2012 Banner">
+      <div class="home-banner-content">
+        <div class="home-banner-text">
+          <h3>Bakat Digital, Kreativiti, dan Inovasi</h3>
+          <p>
+            Website ini menjadi ruang utama untuk menyusun maklumat projek, menampilkan
+            perkembangan kumpulan, dan memperlihatkan hasil pembelajaran UBD2012
+            secara lebih kemas dan visual.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const loader = document.getElementById("loader");
+      if (!loader) return;
+
+      const hasSeenLoader = sessionStorage.getItem("ubd2012_loader_seen");
+
+      if (hasSeenLoader) {
+        loader.style.display = "none";
+      } else {
+        window.addEventListener("load", function () {
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+              sessionStorage.setItem("ubd2012_loader_seen", "true");
+            }, 500);
+          }, 1500);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

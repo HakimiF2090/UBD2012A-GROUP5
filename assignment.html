@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ms">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UBD2012 A Group 5 - Assignment</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBD2012 A Group 5 - Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+   <style>
       .image-modal {
         display: none;
         position: fixed;
@@ -63,23 +63,59 @@
         border-radius: 10px;
       }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <aside class="sidebar">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
       <div class="sidebar-title">
         <h1>UBD2012 A</h1>
         <h2>Group 5</h2>
       </div>
+
       <div class="menu">
-        <a href="introduction.html">Introduction</a>
-        <a href="activity.html">Weekly Activity</a>
-        <a href="assignment.html" class="active">Assignment</a>
-        <a href="credit.html">Credit</a>
+        <a href="index.html">
+          <div class="menu-icon">⌂</div>
+          <div class="menu-text">
+            <strong>Home</strong>
+            <span>Laman utama</span>
+          </div>
+        </a>
+
+        <a href="introduction.html">
+          <div class="menu-icon">i</div>
+          <div class="menu-text">
+            <strong>Introduction</strong>
+            <span>Maklumat kursus</span>
+          </div>
+        </a>
+
+        <a href="activity.html">
+          <div class="menu-icon">◫</div>
+          <div class="menu-text">
+            <strong>Weekly Activity</strong>
+            <span>Aktiviti mingguan</span>
+          </div>
+        </a>
+
+        <a href="assignment.html" class="active">
+          <div class="menu-icon">✎</div>
+          <div class="menu-text">
+            <strong>Assignment</strong>
+            <span>Tugasan kumpulan</span>
+          </div>
+        </a>
+
+        <a href="credit.html">
+          <div class="menu-icon">★</div>
+          <div class="menu-text">
+            <strong>Credit</strong>
+            <span>Penghargaan</span>
+          </div>
+        </a>
       </div>
     </aside>
 
-      <main class="content">
+          <main class="content">
         <section class="section active">
           <div class="card">
             <h3>Assignment</h3>
@@ -272,8 +308,7 @@
         </section>
       </main>
     </div>
-
-    <!-- Modal for Image Preview -->
+  <!-- Modal for Image Preview -->
     <div id="imageModal" class="image-modal">
       <div class="image-modal-content">
         <button class="image-close" onclick="closeImagePreview()">&times;</button>
