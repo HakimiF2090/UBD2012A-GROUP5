@@ -1050,3 +1050,101 @@ body.home-page {
     height: 460px;
   }
 }
+
+/* =========================
+    FLIP-CV PREMIUM INTEGRATION
+========================= */
+/* =========================
+    FLIP-CV PREMIUM INTEGRATION
+========================= */
+
+/* Container Utama */
+.flip-cv-container {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1 / 1.41; /* Nisbah A4 */
+    perspective: 1500px;
+    margin-bottom: 15px;
+    border: 2px dashed rgba(254, 243, 199, 0.35);
+    border-radius: 12px;
+    
+    /* Transition untuk Hover */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Fix Gambar Blur */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* KESAN HOVER YANG ANDA MAHU */
+.flip-cv-container:hover {
+    transform: translateY(-4px) scale(1.02) translateZ(0); /* translateZ(0) untuk kekalkan ketajaman */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+    border-color: #fef3c7;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Bahagian Dalam (Yang Berpusing) */
+.flip-cv-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Trigger Pusing melalui JavaScript */
+.flip-cv-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Sisi Depan & Belakang */
+.flip-cv-front, .flip-cv-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Style Gambar */
+.flip-cv-front img, .flip-cv-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    
+    /* Booster Ketajaman Gambar */
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0); 
+}
+
+.flip-cv-back {
+    transform: rotateY(180deg);
+}
+
+/* Butang Flip Action */
+.btn-flip-action {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: rgba(254, 243, 199, 0.1);
+    border: 1px solid rgba(254, 243, 199, 0.3);
+    border-radius: 8px;
+    color: #fef3c7;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn-flip-action:hover {
+    background: rgba(254, 243, 199, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(254, 243, 199, 0.2);
+}
